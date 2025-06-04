@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://wonkothesaner.github.io',
+	site: 'https://wts.services',
 	base: '/astro-scratch-blog',
 	integrations: [mdx(), sitemap()],
 });
