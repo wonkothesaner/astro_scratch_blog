@@ -84,6 +84,13 @@ const mediaClass = flip ? "media media-flip" : "media";
         display: block;
     }
 
+ /* Apply global styles to all p elements within .media-content */
+    :global(.media-content p) {
+        font-size: 1em; /* Adjust this value to match your global p font size */
+        line-height: 1.6; /* Adjust this value to match your global p line height */
+        margin-bottom: 1em; /* Adjust this value to match your global p margin bottom */
+    }
+
     @media (max-width: 720px) {
         .media {
             grid-template-columns: fit-content(100px) 1fr;
