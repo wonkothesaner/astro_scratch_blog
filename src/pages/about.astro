@@ -1,19 +1,28 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import MediaObject from "../components/layoutComponents/MediaObject.astro";
+import profileImage from "../assets/images/martin_headshot.png"; // Import the image
+import golfImage from "../assets/images/golf_image.jpg";
+import toolongdidnotread from "../assets/images/tldr_blog_image.svg"; // Import the image
 ---
 
 <Layout
 	title="About Me"
 	description="Page desribing who I am and what I do."
 	pubDate={new Date("June 02 2025")}
-	heroImage="/blog-placeholder-about.jpg"
+	heroImage="/PET_Keyboard_improved.svg"
 >
+	<MediaObject image={profileImage} alt="Too long did not read">
+		<p>
+			<b>TL;DR</b>...I used to work long hours implementing Enterprise IT software
+			solutions. </br> Now I am happier trying to write my own code. In fact,
+			I'm happier as long as I am at home, with family and friends, and
+			learning.
+		</p>
+	</MediaObject>
 	<p>
-		I am happy. As long as I am at home, with family and friends, and
-		learning.
-	</p>
-	<p>
-		<b>Curious. Impatient. Perpetually</b> - that is what I have on my WhatsApp
+		For those willing to read on further I am
+		<b><i>Curious. Impatient. Perpetually</i></b> - that is what I have on my WhatsApp
 		profile. Hey, Mark Z here's looking at you!
 	</p>
 	<p>
@@ -27,7 +36,6 @@ import Layout from "../layouts/BlogPost.astro";
 	If I had a dinner party with 5 people (alive or dead), I would invite Buzz Aldrin
 	for sure. 🌝 Neil Armstrong might kill the atmosphere, sorry Neil. I will leave
 	the other four invitees for a later blog post.
-
 	<p>
 		I grew up south of London. Where exactly? That is not as important as
 		all the chances that I was given by my parents. To do and explore as I
@@ -39,15 +47,26 @@ import Layout from "../layouts/BlogPost.astro";
 			href="https://www.poetryfoundation.org/poems/48419/this-be-the-verse"
 			target="_blank"
 			rel="noopener noreferrer">This Be The Verse</a
-		>) that may resonate with you. I can relate to some (but not
-		all) of it; most especially because I now have children myself.
+		>) that may resonate with you. I can relate to some (but not all) of it;
+		most especially because I now have children myself.
 	</p>
 	<p>
-		Once I left home, I went to university.  Which one?  That is a fair question and indeed may be of interest to some (and of import to what follows) but <i>I find it often brings too much baggage to the table</i>.  Perhaps this is a generational thing although I am not sure I understand the generational things.</br>
+		Once I left home, I went to university. Which one? That is a fair
+		question and indeed may be of interest to some (and of import to what
+		follows) but <i>I find it often brings too much baggage to the table</i
+		>. Perhaps this is a generational thing although I am not sure I
+		understand the generational things.
 	</p>
+
 	<p>
-		I did Engineering but was not that good at it.  I left not knowing what I wanted to do so applied to some investment banks.  Because some of my friends had done the same and the money appeared good.</p>
-	<p>
-		I played golf while waiting for the banks to respond.  It did not take them long.  And then I played a while longer.  I did not get a single interview, let alone job offer.  I guess they knew my heart was not in it?
+		I did Engineering but was not that good at it. I left not knowing what I
+		wanted to do so applied to some investment banks. Because some of my
+		friends had done the same and the money appeared good.
 	</p>
+	<MediaObject image={golfImage} alt="My Profile" flip={false}>
+		I played golf while waiting for the banks to respond. It did not take
+		them long. And then I played a while longer. I did not get a single
+		interview, let alone job offer. I guess they knew my heart was not in
+		it?
+	</MediaObject>
 </Layout>
