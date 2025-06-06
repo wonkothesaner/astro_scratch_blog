@@ -1,16 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
-
 interface Props {
-  image: ImageMetadata;
-  alt: string; // Alt text for the image
-  footer?: string; // Optional footer text;
-  flip?: boolean;
+    image: ImageMetadata;
+    alt: string; // Alt text for the image
+    source?: string; // Optional source text for the image
+    flip?: boolean;
 }
 
-
-const { image, alt, footer, flip } = Astro.props as Props;
+const { image, alt, source, flip } = Astro.props as Props;
 
 const mediaClass = flip ? "media media-flip" : "media";
 ---
@@ -18,12 +16,14 @@ const mediaClass = flip ? "media media-flip" : "media";
 <div class={mediaClass}>
     <div class="img">
         <Image src={image} alt={alt} />
+        <p class="source">
+                {source && <span>Source: {source}</span>}
+        </p>
     </div>
-    <div class="content">
+    <div class="media-content">
         <slot />
         <!-- Content will be inserted here -->
     </div>
-    {footer && <div class="footer">{footer}</div>}
 </div>
 
 <style>
@@ -35,7 +35,8 @@ const mediaClass = flip ? "media media-flip" : "media";
             "image content"
             "image footer";
         grid-gap: 20px;
-        margin-bottom: 4em;
+        margin-bottom: 1em;
+        align-items: start; /* Align grid items to top */
     }
 
     .media-flip {
@@ -48,12 +49,28 @@ const mediaClass = flip ? "media media-flip" : "media";
     .img {
         grid-area: image;
         display: flex;
-        align-items: center; /* Center the image vertically */
-        justify-content: center; /* Center the image horizontally */
+        flex-direction: column;
+        align-items: start; /* Align image and source to top/left */
     }
 
-    .content {
+    .img img {
+        display: block;
+    }
+
+    .source {
+        margin-top: 0.5em;
+        align-self: flex-start;
+        font-size: 0.85em;
+        color: #a0aec0;
+    }
+
+    .media-content {
         grid-area: content;
+        align-self: start; /* Ensure content starts at top */
+    }
+
+    :global(.media-content p:first-of-type) {
+        margin-top: 0;
     }
 
     .footer {
@@ -64,6 +81,20 @@ const mediaClass = flip ? "media media-flip" : "media";
         width: 100%;
         height: auto;
         object-fit: cover;
-        display: block; /* important to avoid extra spacing */
+        display: block;
+    }
+
+    @media (max-width: 700px) {
+        .media {
+            grid-template-columns: fit-content(100px) 1fr;
+        }
+
+        .media-flip {
+            grid-template-columns: 1fr fit-content(100px);
+        }
+
+        .img {
+            align-items: center; /* Center image on smaller screens */
+        }
     }
 </style>
