@@ -1,4 +1,5 @@
 ---
+// filepath: /Users/martindriscoll/Documents/web_projects/astro_scratch/astro-scratch-blog/src/components/layoutComponents/MediaObject.astro
 import { Image } from "astro:assets";
 
 interface Props {
@@ -93,15 +94,49 @@ const mediaClass = flip ? "media media-flip" : "media";
 
     @media (max-width: 720px) {
         .media {
-            grid-template-columns: fit-content(100px) 1fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "image"
+                "content"
+                "footer";
         }
-
-        .media-flip {
-            grid-template-columns: 1fr fit-content(100px);
+        
+        .media-flip{
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "image"
+                "content"
+                "footer";
         }
-
         .img {
             align-items: center; /* Center image on smaller screens */
+        }
+
+        .img img {
+            max-height: 175px;
+            width: auto;
+            max-width: 100vw;
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .media-content {
+            align-items: center;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        .media-flip > .footer {
+            text-align: center;
+        }
+         .source {
+            text-align: center; /* Center the source text */
+            align-self: center;
         }
     }
 </style>
