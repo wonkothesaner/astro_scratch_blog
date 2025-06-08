@@ -3,7 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 import { SITE_TITLE } from "../consts";
-import PostHog from "./codeComponents/PostHog.astro";
+import PostHog from "../components/codeComponents/PostHog.astro";
 
 interface Props {
 	title: string;
@@ -13,7 +13,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+const { title, description, image = "/ogimage.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->

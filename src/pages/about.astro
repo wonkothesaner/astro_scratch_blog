@@ -1,21 +1,20 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
-import { Image } from "astro:assets";
 import MediaObject from "../components/layoutComponents/MediaObject.astro";
-import profileImage from "../assets/images/martin_headshot.png"; // Import the image
-import golfImage from "../assets/images/golf_image.jpg";
-import apolloImage from "../assets/images/apollo_11_crew.jpg"; // Import the image
-import warningImage from "../assets/images/warning_Symbol.png"; // Import the image
-import mondeoImage from "../assets/images/ford_mondeo.jpg"; // Import the image
-import astroImage from "../assets/images/astro-logo-dark.png"; // Import the image
-import earthriseImage from "../assets/images/earthrise_apollo_8.jpg"; // Import the image
+import profileImage from "../assets/images/about/martin_headshot.png"; // Import the image
+import golfImage from "../assets/images/about/golf_image.jpg";
+import apolloImage from "../assets/images/about/apollo_11_crew.jpg"; // Import the image
+import warningImage from "../assets/images/about/warning_Symbol.png"; // Import the image
+import mondeoImage from "../assets/images/about/ford_mondeo.jpg"; // Import the image
+import astroImage from "../assets/images/about/astro-logo-dark.png"; // Import the image
+import earthriseImage from "../assets/images/about/earthrise_apollo_8.jpg"; // Import the image
 ---
 
 <Layout
 	title="About Me"
 	description="Page desribing who I am and what I do."
 	pubDate={new Date("June 02 2025")}
-	heroImage="/PET_Keyboard_improved.svg"
+	heroImage="/images/about/PET_Keyboard_improved.svg"
 >
 	<MediaObject image={warningImage} alt="Warning">
 		<h3 style="color: red;">Warning</h3>
