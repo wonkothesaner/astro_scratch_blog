@@ -9,11 +9,12 @@ interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	twitterImage?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/ogimage.png" } = Astro.props;
+const { title, description, image = "/ogimage.png", twitterImage = "/martin-headshot.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -65,6 +66,6 @@ const { title, description, image = "/ogimage.png" } = Astro.props;
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(twitterImage, Astro.url)} />
 
 <PostHog />

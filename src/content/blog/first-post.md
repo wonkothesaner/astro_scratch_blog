@@ -1,8 +1,10 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
-heroImage: '/images/blog/blog-placeholder-3.jpg'
+title: 'Hello World!'
+description: 'First blog post ever'
+pubDate: 'Jun 01 2025'
+heroImage: '/images/blog/shaft-of-pen.jpg'
+tags: ["musings", "life"]
 ---
 
-Where my first blog post will go.
+Take hold of the shaft of the pen...
+...Subscribe to the first step taken from a justified line into the margin. 

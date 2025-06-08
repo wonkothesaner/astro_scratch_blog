@@ -1,8 +1,9 @@
 ---
-title: 'Second post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 15 2022'
-heroImage: '/images/blog/blog-placeholder-4.jpg'
+title: 'Shout out to Syntax.fm'
+description: 'There isn''t a podcast episode where I don''t learn something useful'
+pubDate: 'Jun 8 2025'
+heroImage: '/images/blog/syntaxfm.png'
+tags: ["coding"]
 ---
 
-Where my second blog post will go.
+Shout out to Wes, Scott and CJ for the excellent work they do on Syntaxfm.
