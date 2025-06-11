@@ -8,6 +8,9 @@ import FormattedDate from "../components/FormattedDate.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { pathname } = Astro.url;
+console.log(pathname);
+
 ---
 
 <html lang="en">
@@ -59,7 +62,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
+				<div class="hero-image" id={pathname === "/about" ? "about" : undefined }>
 					{
 						heroImage && (
 							<img
