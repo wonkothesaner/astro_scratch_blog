@@ -7,4 +7,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://wts.services',
 	integrations: [mdx(), sitemap()],
+	trailingSlash: 'always',
 });

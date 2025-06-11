@@ -9,6 +9,7 @@ type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 const { pathname } = Astro.url;
+console.log("build time pathname", pathname);
 
 ---
 
@@ -61,7 +62,7 @@ const { pathname } = Astro.url;
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image" id={pathname === "/about" ? "about-hero-image" : undefined }>
+				<div class="hero-image" id={pathname === "/about/" ? "about-hero-image" : undefined }>
 					{
 						heroImage && (
 							<img
